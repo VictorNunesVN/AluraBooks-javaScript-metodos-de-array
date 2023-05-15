@@ -1,6 +1,8 @@
 const elementoParaInserirLivros = document.getElementById('livros')
 
 function exibirOsLivrosNaTela(listaDeLivros){
+  // Faz com que o elementoParaInserirLivros seja sempre uma string vazia que será completada pelos elementos a cada click
+  elementoParaInserirLivros.innerHTML = ''
     listaDeLivros.forEach(livro =>{
         elementoParaInserirLivros.innerHTML +=
         `
