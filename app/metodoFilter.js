@@ -8,7 +8,7 @@ function filtarLivros(){
     const elementoBtn = document.getElementById(this.id)
     // pega o valor da categoria do botao (elementoBtn)
     const categoria = elementoBtn.value
-    let livrosFiltrados = livros.filter(livro => livro.categoria === categoria)
+    let livrosFiltrados = categoria == 'disponivel' ? livros.filter( livro => livro.quantidade > 0) : livros.filter(livro => livro.categoria === categoria)
     exibirOsLivrosNaTela(livrosFiltrados)
     console.log(elementoBtn)
   
