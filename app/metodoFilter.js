@@ -14,7 +14,8 @@ function filtarLivros(){
     exibirOsLivrosNaTela(livrosFiltrados)
     console.log(elementoBtn)
     if (categoria == 'disponivel'){
-        exibirValorTotalDosLivrosDisponiveis()
+        const valorTotal = calcularValorTotalDeLivrosDisponiveis(livrosFiltrados)
+        exibirValorTotalDosLivrosDisponiveis(valorTotal)
     }
 }
 
@@ -26,11 +27,11 @@ function filtrarPorDisponibilidade() {
     return livros.filter(livro => livro.quantidade > 0)
 }
 
-function exibirValorTotalDosLivrosDisponiveis(){
+function exibirValorTotalDosLivrosDisponiveis(valorTotal){
     elementoComValorTotalDeLivrosDisponiveis.innerHTML= 
     `
     <div class="livros__disponiveis">
-    <p>Todos os livros disponíveis por R$ <span id="valor"></span></p>
+    <p>Todos os livros disponíveis por R$ <span id="valor">${valorTotal}</span></p>
   </div>
     `
 }
