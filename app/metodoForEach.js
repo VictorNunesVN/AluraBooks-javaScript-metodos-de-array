@@ -1,11 +1,14 @@
 const elementoParaInserirLivros = document.getElementById('livros')
+const elementoComValorTotalDeLivrosDisponiveis = document.getElementById('valor_total_livros_disponiveis')
+
 
 function exibirOsLivrosNaTela(listaDeLivros) {
-    // Faz com que o elementoParaInserirLivros seja sempre uma string vazia que será completada pelos elementos a cada click
+    // Faz com que o elementoParaInserirLivros e elementoComValorTotalDeLivrosDisponiveis seja sempre uma string vazia que será completada pelos elementos a cada click
+    elementoComValorTotalDeLivrosDisponiveis.innerHTML = ''
     elementoParaInserirLivros.innerHTML = ''
     listaDeLivros.forEach(livro => {
         let disponibilidade = livro.quantidade > 0 ? 'livro__imagens' : 'livros__imagens indisponivel'
-         
+
         //let disponibilidade = verificarDisponibilidade(livro)
         elementoParaInserirLivros.innerHTML +=
             `
